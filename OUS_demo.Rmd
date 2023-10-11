@@ -148,6 +148,7 @@ d <- get(as.character(obj$call["data"]))
 n <- nrow(d)
 
 # Bootstrapping sample
+xvar <- all.vars(obj$call$formula)[[2]]
 x <- get(xvar, envir = as.environment(d))
 bx <- seq(ceiling(min(x)*4)/4, floor(max(x)*4)/4, 0.1)
 
